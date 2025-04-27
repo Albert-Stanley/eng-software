@@ -1,0 +1,66 @@
+/* Estilos gerais para o body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo do formulário */
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos campos do formulário */
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.campo input, .campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Estilo do botão de submit */
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-submit:hover {
+    background-color: #45a049;
+}
