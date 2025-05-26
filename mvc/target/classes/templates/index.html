@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Descubra Nossos Produtos</h1>
+
+    <form class="search-form" th:action="@{/pagina}" method="get">
+        <input class="search-input" type="text" name="q" placeholder="O que você procura hoje?" th:value="${query}">
+        <button class="search-button" type="submit">Buscar</button>
+    </form>
+
+    <div class="product-grid">
+        <div class="product-card" th:each="produto : ${produtos}">
+            <img class="product-image" th:src="${produto.imagemUrl}" alt="Imagem do Produto">
+            <div class="product-content">
+                <h2 class="product-name" th:text="${produto.nome}">Nome do Produto</h2>
+                <p class="product-description" th:text="${produto.descricao}">Descrição do produto.</p>
+                <div class="product-price" th:text="${'R$ ' + #numbers.formatDecimal(produto.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</div>
+            </div>
+        </div>
+    </div>
+
+    <div th:if="${produtos.isEmpty()}" class="no-results">
+        <h2>Nenhum produto encontrado para a busca "<span th:text="${query}"></span>"</h2>
+        <p>Tente refinar sua busca ou <a th:href="@{/pagina}">ver todos os produtos</a>.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
